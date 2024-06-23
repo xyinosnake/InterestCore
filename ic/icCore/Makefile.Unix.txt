@@ -1,0 +1,16 @@
+﻿SHELL    = sh
+CC       = clang
+OUT_DIR  = ./__BIN
+CC_FLAGS = -std=c17 -fPIC
+MACROS   = -DIC_USE_HIDE
+TARGETS  = \
+	$(OUT_DIR)/icCore.so
+
+.PHONY: all, clean
+all: $(TARGETS)
+
+$(OUT_DIR)/icCore.so: ./icCore-Shared.c
+	$(CC) ./icCore-Shared.c $(CC_FLAGS) -O3 -shared -o $(OUT_DIR)/icCore.so
+
+clean:
+	rm $(OUT_DIR)/*.*

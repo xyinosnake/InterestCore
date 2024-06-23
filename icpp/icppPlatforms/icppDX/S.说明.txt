@@ -1,0 +1,10 @@
+﻿动态库：
+	icppDXC
+	icppD2D
+	icppWIC
+	icppDInput
+	icppDWrite
+	icppXAudio2 - XAudio2_9Redist
+
+经过慎重考虑，目前DX诸库必须使用msvc编译（GNU编译器目前并不支持）。
+基于MSVC的clang和icc理论上也行。但是我没有测试。

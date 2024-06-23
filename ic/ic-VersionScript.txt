@@ -1,0 +1,11 @@
+﻿{
+    global:
+        *;
+    local:
+		g_ic*;
+        H_ic*;
+		__emutls_*;
+		_MCF_*;
+		__MCF_*;
+		_Unwind_*;
+};

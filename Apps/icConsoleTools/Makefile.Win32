@@ -1,0 +1,27 @@
+﻿#
+# 说明：
+# 	   该文件仅供Windows GNU/GCC（MinGW-w64）使用。
+#
+# ic仅供Windows使用，Shell使用cmd。
+
+SHELL       = cmd
+CPL         = gcc
+INCLUDE_DIR = .
+OUTPUT_DIR  = .\__BIN
+CC_FLAGS    = -std=c17 $(MACROS) -static
+MACROS      = -DUNICODE -D_UNICODE
+TARGETS     = \
+	$(OUTPUT_DIR)\ddep.exe \
+	$(OUTPUT_DIR)\dexp.exe
+
+.PHONY: all, clean
+all: $(TARGETS)
+
+clean:
+	del /Q $(OUTPUT_DIR)\*.*
+
+$(OUTPUT_DIR)\ddep.exe: .\ddep.c
+	$(CPL) $(CC_FLAGS) .\ddep.c -o $(OUTPUT_DIR)\ddep.exe
+
+$(OUTPUT_DIR)\dexp.exe: .\dexp.c
+	$(CPL) $(CC_FLAGS) .\dexp.c -o $(OUTPUT_DIR)\dexp.exe

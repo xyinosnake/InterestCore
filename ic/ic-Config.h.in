@@ -1,0 +1,9 @@
+﻿
+#pragma once
+
+#include"./icInfo.h"
+
+ic_info("ic-Config")
+    #define IC_VER_NUMBER    @IC_VER_NUMBER@
+    #define IC_VER_STRING   "@IC_VER_STRING@"
+    #define IC_COMPILE_TIME "@IC_COMPILE_TIME@"

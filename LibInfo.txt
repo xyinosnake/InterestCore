@@ -1,0 +1,33 @@
+﻿
+---Composition of the library---
+
+Headers Parts:
+	ic   = [I]nterest  Core  [C]        Part.
+	icpp = [I]nterest  Core  [C][P][P]  Part.
+	icd  = [I]nterest [C]ore [D]        Part.
+	icn  = [I]nterest [C]ore [N]im      Part.
+	icpy = [I]nterest [C]ore [P][y]thon Part.
+	
+Libs Parts:
+	C Part:
+		icCore
+		icPlatforms:
+			icWin32(icCore) icUnix(icCore)
+		ic(icCore icWin32) // Windows
+		ic(icCore icUnix)  // Unix-Like
+	   *icHigh:
+		   *icSDL: icSDL2 icSDL3
+			icFFmpeg
+	
+	D part:
+		icd
+		icd.icCore
+		icd.ic
+		icd.id
+
+Cmd(Terminal) Color:
+	icCore -> Red
+		icWin32 -> Purple
+		icUnix  -> Green
+	ic     -> Yellow
+	icpp   -> Cyan
